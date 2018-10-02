@@ -16,3 +16,11 @@ def write_table_to_file("table.txt", get_table_from_file("table.txt")):
 def print_table(table):
     for i in table:
         print(i)
+
+
+
+def get_empty_table(table):
+    empty_table = []
+    for i in table:
+        empty_table = empty_table + [len(i)*' ']
+    return empty_table

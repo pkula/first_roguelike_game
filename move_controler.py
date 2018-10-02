@@ -22,11 +22,9 @@ def moves(table,input,x,y):
     o = [table,x,y]
     return o
 
-
-
-def teleport(table,input,x,y):
+def teleport(table,input,x,y,cover_table):
     if input == 't':
-        view.print_table(table)
+        view.print_table(cover_table)
         input = data.getch()
         if input == 's' and table[y+2][x] != '#':
             table[y] = data.replace_in_string(table[y],x,'.')
