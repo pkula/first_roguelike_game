@@ -16,8 +16,3 @@ def write_table_to_file("table.txt", get_table_from_file("table.txt")):
 def print_table(table):
     for i in table:
         print(i)
-
-
-def replace_in_string(string,nb_replace,char_to_replace):
-    string = string[:nb_replace] + char_to_replace + string[nb_replace + 1 :]
-    return string
