@@ -11,6 +11,7 @@ def run():
     cover_table = view.get_empty_table(table)
     print("Press something to start")
     coordinates_a_b = data.find_a_b(table)
+    coordinates_water = data.find_water(table)
     while True:
         input = data.getch()
         os.system("clear")
@@ -28,5 +29,8 @@ def run():
         x = w[0]
         y = w[1]
         table = w[2]
+
+        moves.water(coordinates_water,x,y)
+
         data.discover_table(table,cover_table,x,y)
         view.print_table(cover_table)

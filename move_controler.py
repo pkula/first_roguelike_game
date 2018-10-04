@@ -50,7 +50,6 @@ def teleport(table,input,x,y,cover_table):
     os.system("clear")
     return o
 
-
 def gate_teleport(table,cover_table,coordinates_a_b,x,y):
     if coordinates_a_b[0] == x and coordinates_a_b[1] == y:
         table[y] = data.replace_in_string(table[y],x,'a')
@@ -62,7 +61,13 @@ def gate_teleport(table,cover_table,coordinates_a_b,x,y):
         table[y] = data.replace_in_string(table[y],x,'b')
         cover_table[y] = data.replace_in_string(cover_table[y],x,'b')
         x = coordinates_a_b[0]
-        y = coordinates_a_b[1]+1
+        y = coordinates_a_b[1]-1
         table[y] = data.replace_in_string(table[y],x,'@')
     l = [x,y,table]
     return l
+
+
+def water(coordinates_water,x,y):
+    for i in coordinates_water:
+        if i[0] == x and i[1] == y:
+            exit()

@@ -34,3 +34,14 @@ def find_a_b(table):
                 yB = i
     coordinates_a_b = [xA,yA,xB,yB]
     return coordinates_a_b
+
+
+
+
+def find_water(table):
+    coordinates_water = []
+    for i in range(0,len(table)):
+        for w in range(0,len(table[i])):
+            if table[i][w] == 'o':
+                coordinates_water = coordinates_water + [[w,i]]
+    return coordinates_water
