@@ -12,13 +12,11 @@ def replace_in_string(string,nb_replace,char_to_replace):
     string = string[:nb_replace] + char_to_replace + string[nb_replace + 1 :]
     return string
 def discover_table(table,cover_table,x,y):
-    cover_table[y] = cover_table[y][:x-1] + table[y][x-1:x+2] + cover_table[y][x+2:]
-    cover_table[y-1] = cover_table[y-1][:x-1] + table[y-1][x-1:x+2] + cover_table[y-1][x+2:]
-    cover_table[y+1] = cover_table[y+1][:x-1] + table[y+1][x-1:x+2] + cover_table[y+1][x+2:]
-    #cover_table[y-2] = cover_table[y-2][:x-2] + table[y-2][x-2:x+3] + cover_table[y-2][x+3:]
-    #cover_table[y+2] = cover_table[y+2][:x-2] + table[y+2][x-2:x+3] + cover_table[y+2][x+3:]
-
-
+    cover_table[y] = cover_table[y][:x-3] + table[y][x-3:x+4] + cover_table[y][x+4:]
+    cover_table[y-1] = cover_table[y-1][:x-2] + table[y-1][x-2:x+3] + cover_table[y-1][x+3:]
+    cover_table[y+1] = cover_table[y+1][:x-2] + table[y+1][x-2:x+3] + cover_table[y+1][x+3:]
+    cover_table[y-2] = cover_table[y-2][:x-3] + table[y-2][x-3:x+4] + cover_table[y-2][x+4:]
+    cover_table[y+2] = cover_table[y+2][:x-3] + table[y+2][x-3:x+4] + cover_table[y+2][x+4:]
 def find_a_b(table):
     xA = 0
     yA = 0
