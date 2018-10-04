@@ -45,3 +45,16 @@ def find_water(table):
             if table[i][w] == 'o':
                 coordinates_water = coordinates_water + [[w,i]]
     return coordinates_water
+
+
+
+
+def find_dolars(table):
+    n = 0
+    coordinates_dolars = []
+    for i in range(0,len(table)):
+        for w in range(0,len(table[i])):
+            if table[i][w] == '$':
+                n = n + 1
+                coordinates_dolars = coordinates_dolars + [[w,i]]
+    return coordinates_dolars

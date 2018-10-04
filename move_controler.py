@@ -71,3 +71,13 @@ def water(coordinates_water,x,y):
     for i in coordinates_water:
         if i[0] == x and i[1] == y:
             exit()
+
+def dolars(coordinates_dolars,x,y):
+    coordinates = []
+    for i in coordinates_dolars:
+        if i[0] == x and i[1] == y:
+                continue
+        coordinates = coordinates + [i]
+    if coordinates_dolars == []:
+        exit()
+    return coordinates

@@ -12,6 +12,7 @@ def run():
     print("Press something to start")
     coordinates_a_b = data.find_a_b(table)
     coordinates_water = data.find_water(table)
+    coordinates_dolars = data.find_dolars(table)
     while True:
         input = data.getch()
         os.system("clear")
@@ -29,8 +30,9 @@ def run():
         x = w[0]
         y = w[1]
         table = w[2]
-
         moves.water(coordinates_water,x,y)
+
+        coordinates_dolars = moves.dolars(coordinates_dolars,x,y)
 
         data.discover_table(table,cover_table,x,y)
         view.print_table(cover_table)
