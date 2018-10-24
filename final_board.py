@@ -37,6 +37,7 @@ def win_information():
         time.sleep(0.02)
     return win
 
+
 def points_holder():
     """
     information holder for user_hp
@@ -46,13 +47,13 @@ def points_holder():
     """
 
     user_hp = 0
-
+    points= 122
     if user_hp <= 0:
         loose_information()
         print("Try again".center(os.get_terminal_size().columns))
-    elif user_hp > 100:
+    elif points >= 100:
         win_information()
-        print("Points or game inventory")
+        print("Points or game inventory".center(os.get_terminal_size().columns))
 
 
 points_holder()
