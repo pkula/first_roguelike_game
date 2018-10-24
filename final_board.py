@@ -1,26 +1,6 @@
 import time
 import sys
-
-def board_view():
-    print("""
-    
-      ___           ___           ___           ___                    ___                         ___           ___     
-     /\__\         /\  \         /\  \         /\__\                  /\  \          ___          /\__\         /\  \    
-    /:/ _/_       /::\  \       |::\  \       /:/ _/_                /::\  \        /\  \        /:/ _/_       /::\  \   
-   /:/ /\  \     /:/\:\  \      |:|:\  \     /:/ /\__\              /:/\:\  \       \:\  \      /:/ /\__\     /:/\:\__\  
-  /:/ /::\  \   /:/ /::\  \   __|:|\:\  \   /:/ /:/ _/_            /:/  \:\  \       \:\  \    /:/ /:/ _/_   /:/ /:/  /  
- /:/__\/\:\__\ /:/_/:/\:\__\ /::::|_\:\__\ /:/_/:/ /\__\          /:/__/ \:\__\  ___  \:\__\  /:/_/:/ /\__\ /:/_/:/__/___
- \:\  \ /:/  / \:\/:/  \/__/ \:\~~\  \/__/ \:\/:/ /:/  /          \:\  \ /:/  / /\  \ |:|  |  \:\/:/ /:/  / \:\/:::::/  /
-  \:\  /:/  /   \::/__/       \:\  \        \::/_/:/  /            \:\  /:/  /  \:\  \|:|  |   \::/_/:/  /   \::/~~/~~~~ 
-   \:\/:/  /     \:\  \        \:\  \        \:\/:/  /              \:\/:/  /    \:\__|:|__|    \:\/:/  /     \:\~~\     
-    \::/  /       \:\__\        \:\__\        \::/  /                \::/  /      \::::/__/      \::/  /       \:\__\    
-     \/__/         \/__/         \/__/         \/__/                  \/__/        ~~~~           \/__/         \/__/    
-
-    """)
-
-
-board_view()
-
+import os
 
 def loose_information():
     loose = ("""
@@ -35,9 +15,10 @@ def loose_information():
     """)
 
     for char in loose:
-       sys.stdout.write(char)
-       time.sleep(0.02)
-    return loose
+
+        sys.stdout.write(char)
+        time.sleep(0.02)
+    return loose.center(os.get_terminal_size().columns)
 
 
 def win_information():
@@ -56,10 +37,6 @@ def win_information():
         time.sleep(0.02)
     return win
 
-
-
-
-
 def points_holder():
     """
     information holder for user_hp
@@ -72,8 +49,10 @@ def points_holder():
 
     if user_hp <= 0:
         loose_information()
-        print("Try again")
+        print("Try again".center(os.get_terminal_size().columns))
     elif user_hp > 100:
         win_information()
         print("Points or game inventory")
 
+
+points_holder()
