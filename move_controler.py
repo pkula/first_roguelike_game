@@ -22,8 +22,9 @@ def moves(table,input,x,y, character):
         table[y] = data.replace_in_string(table[y],x,'.')
         table[y] = data.replace_in_string(table[y],x-1, character)
         x = x - 1
-    o = [table,x,y]
+    o = [table, x, y]
     return o
+
 
 def teleport(table,input,x,y,cover_table, character):
     if input == 't':
@@ -49,20 +50,21 @@ def teleport(table,input,x,y,cover_table, character):
             cover_table[y] = data.replace_in_string(cover_table[y],x,'.')
             table[y] = data.replace_in_string(table[y],x-2, character)
             x = x - 2
-    o = [table,x,y]
+    o = [table, x, y]
     os.system("clear")
     return o
 
 def gate_teleport(table,cover_table,coordinates_a_b,x,y, character):
     if coordinates_a_b[0] == x and coordinates_a_b[1] == y:
-        table[y] = data.replace_in_string(table[y],x,'a')
-        cover_table[y] = data.replace_in_string(cover_table[y],x,'a')
+        table[y] = data.replace_in_string(table[y], x, 'a')
+        cover_table[y] = data.replace_in_string(cover_table[y], x, 'a')
         x = coordinates_a_b[2]
         y = coordinates_a_b[3]+1
         table[y] = data.replace_in_string(table[y],x, character)
+
     if coordinates_a_b[2] == x and coordinates_a_b[3] == y:
-        table[y] = data.replace_in_string(table[y],x,'b')
-        cover_table[y] = data.replace_in_string(cover_table[y],x,'b')
+        table[y] = data.replace_in_string(table[y], x, 'b')
+        cover_table[y] = data.replace_in_string(cover_table[y], x, 'b')
         x = coordinates_a_b[0]
         y = coordinates_a_b[1]-1
         table[y] = data.replace_in_string(table[y],x, character)
@@ -70,12 +72,13 @@ def gate_teleport(table,cover_table,coordinates_a_b,x,y, character):
     return l
 
 
-def water(coordinates_water,x,y):
+def water(coordinates_water, x, y):
     for i in coordinates_water:
         if i[0] == x and i[1] == y:
             exit()
 
-def dolars(coordinates_dolars,x,y):
+
+def dolars(coordinates_dolars, x, y):
     coordinates = []
     for i in coordinates_dolars:
         if i[0] == x and i[1] == y:

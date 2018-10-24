@@ -7,7 +7,7 @@ import menu
 import character_selection
 
 
-#coordinates = [x,y]
+# coordinates = [x,y]
 def run():
     player_choice = menu.menu()
     if player_choice == '1':
@@ -39,11 +39,11 @@ def run():
             x = w[0]
             y = w[1]
             table = w[2]
-            moves.water(coordinates_water,x,y)
+            moves.water(coordinates_water, x, y)
 
-            coordinates_dolars = moves.dolars(coordinates_dolars,x,y)
+            coordinates_dolars = moves.dolars(coordinates_dolars, x, y)
 
-            data.discover_table(table,cover_table,x,y)
+            data.discover_table(table, cover_table, x, y)
             view.print_table(cover_table)
 
     if player_choice == '2':
