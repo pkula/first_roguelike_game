@@ -1,4 +1,8 @@
+import os
+
+
 def menu():
+    os.system('clear')
     print("""
     [1] - Start Game
     [2] - Control
@@ -10,9 +14,7 @@ def menu():
 
 
 def options_menu():
-    print("""
-    Character control - w,s,a,d
-    """)
-
-    a = input('\n Press 0  to go back: ')
+    print("Character control - w, s, a, d")
+    print("Inventory - i")
+    a = input("\nPress 0 to go back: ")
     return a

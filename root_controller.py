@@ -10,7 +10,15 @@ import inventory as inv
 
 # coordinates = [x,y]
 def run():
-    player_choice = menu.menu()
+    choice_from_menu = False
+    while not choice_from_menu:
+        player_choice = menu.menu()
+        if player_choice == '1' or player_choice == '2' or player_choice == '3':
+            choice_from_menu = True
+        else:
+            print("\nThere is no such choice!")
+            input()
+
     if player_choice == '1':
         os.system('clear')
         x = 3
@@ -23,14 +31,19 @@ def run():
         coordinates_dolars = data.find_dolars(table)
         coordinates_items = data.find_item(table)
         character = character_selection.character_selection()
-        os.system('clear')
-        print("Press ENTER to start")
+        enter_pressed = False
+        while not enter_pressed:
+            os.system('clear')
+            enter_input = input("Press ENTER to start\n")
+            if enter_input == "":
+                enter_pressed = True
+
         while True:
             inp = data.getch()
             if inp == "i":
                 os.system("clear")
                 print(inv.print_table(inventory))
-                print("Press ENTER to return")
+                print("\nPress ENTER to return")
                 quit_inventory = input()
             os.system("clear")
             w = moves.moves(table, inp, x, y, character)
@@ -56,10 +69,14 @@ def run():
 
     if player_choice == '2':
         os.system('clear')
-        a = menu.options_menu()
-        if a == '0':
+        valid_input = False
+        while not valid_input:
             os.system('clear')
-            run()
+            a = menu.options_menu()
+            if a == '0':
+                valid_input = True
+                os.system('clear')
+                run()
 
     if player_choice == '3':
         os.system('clear')
