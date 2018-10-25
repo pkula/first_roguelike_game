@@ -34,6 +34,7 @@ def run():
         enter_pressed = False
         while not enter_pressed:
             os.system('clear')
+            menu.rogulike_title()
             enter_input = input("Press ENTER to start\n")
             if enter_input == "":
                 enter_pressed = True
