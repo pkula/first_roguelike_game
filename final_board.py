@@ -2,6 +2,7 @@ import time
 import sys
 import os
 
+
 def loose_information():
     loose = ("""
  __     __           _                      
@@ -38,22 +39,4 @@ def win_information():
     return win
 
 
-def points_holder():
-    """
-    information holder for user_hp
-    win or loose result information
-    :return:
-    string with points value and message for user
-    """
 
-    user_hp = 0
-    points= 122
-    if user_hp <= 0:
-        loose_information()
-        print("Try again".center(os.get_terminal_size().columns))
-    elif points >= 100:
-        win_information()
-        print("Points or game inventory".center(os.get_terminal_size().columns))
-
-
-points_holder()
