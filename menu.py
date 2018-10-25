@@ -8,6 +8,7 @@ def menu():
     player_choice = input('\nSelect: ')
     return player_choice
 
+
 def options_menu():
     print("""
     Character control - w,s,a,d
