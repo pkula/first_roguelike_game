@@ -1,7 +1,6 @@
 import view
 import os
-import move_controler
-import move_controler as moves
+import move_controller as moves
 import data_manager as data
 import menu
 import character_selection
