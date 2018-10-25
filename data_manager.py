@@ -60,3 +60,12 @@ def find_dolars(table):
                 n = n + 1
                 coordinates_dolars = coordinates_dolars + [[w, i]]
     return coordinates_dolars
+
+
+def find_item(table):
+    coordinates_item = []
+    for i in range(len(table)):
+        for w in range(len(table[i])):
+            if table[i][w] == '?':
+                coordinates_item = coordinates_item + [[w, i]]
+    return coordinates_item
