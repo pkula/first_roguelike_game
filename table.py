@@ -1,6 +1,6 @@
 import copy
 def table_karniak():
-    
+
     karniak = ["............oooo............",
     "...........oooooo...........",
     "..........oooooooo..........",
@@ -82,7 +82,7 @@ def random_coordinates(obj,table_parameters):
 def add_object_to_table(table,obj,table_parameters):
     insert = False
     table2 = copy.deepcopy(table)
-    while not insert:    
+    while not insert:
         y = random_coordinates(obj,table_parameters)[1]
         x = random_coordinates(obj,table_parameters)[0]
         y1 = y
@@ -106,7 +106,7 @@ def add_object_to_table(table,obj,table_parameters):
 def add_object_to_table_necesary(table,obj,table_parameters):
     insert = False
     table2 = copy.deepcopy(table)
-    while not insert:    
+    while not insert:
         y = random_coordinates(obj,table_parameters)[1]
         x = random_coordinates(obj,table_parameters)[0]
         y1 = y
@@ -172,12 +172,9 @@ def create_table():
                 if chooser < 6:
                     table[i] = change_one_character_in_string(table[i],w,'#')
                 if chooser > 5 and chooser < 11:
-                    table[i] = change_one_character_in_string(table[i],w,'o')  
+                    table[i] = change_one_character_in_string(table[i],w,'o')
                 if chooser == 20:
-                    table[i] = change_one_character_in_string(table[i],w,'$')                
+                    table[i] = change_one_character_in_string(table[i],w,'$')
 
-    for i in table:
-        print(i)
+
     return(table)
-
-create_table()

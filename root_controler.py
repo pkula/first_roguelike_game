@@ -5,7 +5,7 @@ import move_controler as moves
 import data_manager as data
 import menu
 import character_selection
-
+import table as t
 
 # coordinates = [x,y]
 def run():
@@ -14,7 +14,7 @@ def run():
         os.system('clear')
         x = 3
         y = 3
-        table = view.get_table_from_file("table.txt")
+        table = t.create_table()
         cover_table = view.get_empty_table(table)
         coordinates_a_b = data.find_a_b(table)
         coordinates_water = data.find_water(table)
