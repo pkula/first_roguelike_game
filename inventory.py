@@ -43,3 +43,17 @@ def get_random_item():
     concatenate_armor_name = armor_adjectives_choice + " " + armor_choice
     #inventory.append([concatenate_armor_name, armor_type_choice])
 
+
+def print_table(inventory):
+    table_for_display = PrettyTable()
+    table_for_display.field_names = ["item", "type"]
+    table_for_display.align["item"] = "l"
+    table_for_display.align["type"] = "l"
+
+    for item, category in inventory:
+        table_for_display.add_row([item, category])
+    return table_for_display.get_string(title="Inventory")
+
+
+def add_to_table(inventory, added_item):
+    pass
