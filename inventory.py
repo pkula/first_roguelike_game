@@ -2,7 +2,28 @@ import random
 from prettytable import PrettyTable
 
 
-def get_random_item():
+def get_random_armor():
+    armor_adjectives = ["Shining", "Torn", "Baggy", "Machine-Washable",
+                        "Oversized", "Rainproof", "Slimming", "Sporty",
+                        "Strapless", "Unfashionable", "Scanty", "Roomy",
+                        "Revealing", "Modest", "Non-iron", "Itchy",
+                        "Flame-retardant", "Conservative", "Brief"]
+
+    armor = ["Jerkin", "Breeches", "Boots", "Breastplate", "Greaves", "Sabatons"]
+
+    armor_type = ["Leather", "Plate"]
+
+    armor_adjectives_choice = random.choice(armor_adjectives)
+    armor_choice = random.choice(armor)
+    if armor_choice in armor[0:3]:
+        armor_type_choice = armor_type[0]
+    else:
+        armor_type_choice = armor_type[1]
+
+    return [armor_adjectives_choice + " " + armor_choice, armor_type_choice]
+
+
+def get_random_weapon():
     weapons_adjectives = ["Sharp", "Sparkly", "Twinkling", "Beautiful",
                           "Succulent", "Joyous", "Enchanted", "Naughty",
                           "Extraordinary", "Frisky", "Tantalizing", "Vibrant",
@@ -15,33 +36,24 @@ def get_random_item():
                "Club", "Spear", "Hammer", "Shield", "Bow", "Crossbow",
                "Whip", "Cannon", "Revolver", "Gun", "Nunchaku", "Chain", "Rope"]
 
-    armor_adjectives = ["Shining", "Torn", "Baggy", "Machine-Washable",
-                        "Oversized", "Rainproof", "Slimming", "Sporty",
-                        "Strapless", "Unfashionable", "Scanty", "Roomy",
-                        "Revealing", "Modest", "Non-iron", "Itchy",
-                        "Flame-retardant", "Conservative", "Brief"]
-
-    armor = ["Jerkin", "Breeches", "Boots", "Breastplate", "Greaves", "Sabatons"]
-
-    armor_type = ["Leather", "Plate"]
-
-    inventory = []
-
     weapon_adjective_choice = random.choice(weapons_adjectives)
     weapon_choice = random.choice(weapons)
     weapon_type_choice = random.choice(weapons_types)
-    concatenate_weapon_name = weapon_adjective_choice + " " + weapon_choice
-    #inventory.append([concatenate_weapon_name, weapon_type_choice])
 
-    armor_adjectives_choice = random.choice(armor_adjectives)
-    armor_choice = random.choice(armor)
-    if armor_choice in armor[0:3]:
-        armor_type_choice = armor_type[0]
+    return [weapon_adjective_choice + " " + weapon_choice, weapon_type_choice]
+
+
+def get_weapon_or_armor():
+    random_choice = random.randint(1, 2)
+    if random_choice == 1:
+        return get_random_armor()
     else:
-        armor_type_choice = armor_type[1]
+        return get_random_weapon()
 
-    concatenate_armor_name = armor_adjectives_choice + " " + armor_choice
-    #inventory.append([concatenate_armor_name, armor_type_choice])
+
+def add_item_to_table(random_item, inventory):
+    inventory.append(random_item)
+    return inventory
 
 
 def print_table(inventory):
@@ -53,7 +65,3 @@ def print_table(inventory):
     for item, category in inventory:
         table_for_display.add_row([item, category])
     return table_for_display.get_string(title="Inventory")
-
-
-def add_to_table(inventory, added_item):
-    pass

@@ -6,20 +6,20 @@ def table_karniak():
     karniak = ["............oooo............",
                "...........oooooo...........",
                "..........oooooooo..........",
-                ".........oooooooooo.........",
-                ".........oooooooooo.........",
-                ".........oooooooooo.........",
-                "..........oooooooo..........",
-                "..........oooooooo..........",
-                "..........oooooooo..........",
-                "..........oooooooo..........",
-                "..........oooooooo..........",
-                "...oooooooooooooooooooooo...",
-                ".oooooooooooooooooooooooooo.",
-                "oooooooooooooooooooooooooooo",
-                "oooooooooooooooooooooooooooo",
-                ".oooooooooooo..oooooooooooo.",
-                "..oooooooooo....oooooooooo.."]
+               ".........oooooooooo.........",
+               ".........oooooooooo.........",
+               ".........oooooooooo.........",
+               "..........oooooooo..........",
+               "..........oooooooo..........",
+               "..........oooooooo..........",
+               "..........oooooooo..........",
+               "..........oooooooo..........",
+               "...oooooooooooooooooooooo...",
+               ".oooooooooooooooooooooooooo.",
+               "oooooooooooooooooooooooooooo",
+               "oooooooooooooooooooooooooooo",
+               ".oooooooooooo..oooooooooooo.",
+               "..oooooooooo....oooooooooo.."]
     return(karniak)
 
 
@@ -71,7 +71,6 @@ def create_first_table(heigh=30, width=125, width_of_wall=3):
     for i in range(width_of_wall):
         table.append('#'*width)
     return(table)
-
 
 
 def random_coordinates(obj, table_parameters):
@@ -178,5 +177,3 @@ def create_table():
                     table[i] = change_one_character_in_string(table[i], w, '?')
 
     return(table)
-
-create_table()
