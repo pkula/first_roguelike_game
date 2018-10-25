@@ -1,9 +1,9 @@
-import root_controler
+import root_controller
 import soundtrack
 
 
 def main():
-    root_controler.run()
+    root_controller.run()
 
 
 if __name__ == '__main__':

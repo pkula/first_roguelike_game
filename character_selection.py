@@ -1,5 +1,6 @@
 import os
 
+
 def character_selection():
     impossible_character = False
     while not impossible_character:
