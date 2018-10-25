@@ -2,6 +2,7 @@ import os
 import view
 import data_manager as data
 import character_selection
+import final_board
 
 
 #character = character_selection.character_selection()
@@ -54,6 +55,7 @@ def teleport(table,input,x,y,cover_table, character):
     os.system("clear")
     return o
 
+
 def gate_teleport(table,cover_table,coordinates_a_b,x,y, character):
     if coordinates_a_b[0] == x and coordinates_a_b[1] == y:
         table[y] = data.replace_in_string(table[y], x, 'a')
@@ -75,6 +77,8 @@ def gate_teleport(table,cover_table,coordinates_a_b,x,y, character):
 def water(coordinates_water, x, y):
     for i in coordinates_water:
         if i[0] == x and i[1] == y:
+            final_board.loose_information()
+            print("Try again".center(os.get_terminal_size().columns))
             exit()
 
 
@@ -85,5 +89,7 @@ def dolars(coordinates_dolars, x, y):
                 continue
         coordinates = coordinates + [i]
     if coordinates_dolars == []:
+        final_board.win_information()
+        print("Points or game inventory".center(os.get_terminal_size().columns))
         exit()
     return coordinates
