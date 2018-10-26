@@ -6,6 +6,7 @@ import menu
 import character_selection
 import table as t
 import inventory as inv
+import colors
 
 
 # coordinates = [x,y]
@@ -45,7 +46,8 @@ def run():
             if inp == "i":
                 os.system("clear")
                 print(inv.print_table(inventory))
-                print("Your money:", money - len(coordinates_dolars), "/", money, "$")
+                print("Your money:", colors.CBOLD + colors.CYELLOW, money - len(coordinates_dolars),
+                      colors.CEND, "/", colors.CBOLD + colors.CYELLOW, money, colors.CEND, "$")
                 print("\nPress ENTER to return")
                 quit_inventory = input()
             os.system("clear")

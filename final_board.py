@@ -1,10 +1,11 @@
 import time
 import sys
 import os
+import colors
 
 
 def loose_information():
-    loose = ("""
+    loose = (colors.CBOLD + colors.CVIOLET + """
  __     __           _
  \ \   / /          | |
   \ \_/ /__  _   _  | | ___   ___  ___  ___
@@ -13,7 +14,7 @@ def loose_information():
     |_|\___/ \__,_| |_|\___/ \___/|___/\___|
 
 
-    """)
+    """ + colors.CEND)
 
     for char in loose:
 
@@ -23,7 +24,7 @@ def loose_information():
 
 
 def win_information():
-    win = """
+    win = (colors.CBOLD + colors.CVIOLET + """
  __     __                    _
  \ \   / /                   (_)
   \ \_/ /__  _   _  __      ___ _ __
@@ -31,7 +32,7 @@ def win_information():
     | | (_) | |_| |  \ V  V /| | | | |
     |_|\___/ \__,_|   \_/\_/ |_|_| |_|
 
-    """
+    """ + colors.CEND)
 
     for char in win:
         sys.stdout.write(char)
