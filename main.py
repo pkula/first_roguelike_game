@@ -3,9 +3,9 @@ import soundtrack
 
 
 def main():
+    soundtrack.start()
     root_controller.run()
 
 
 if __name__ == '__main__':
-    soundtrack.start()
     main()

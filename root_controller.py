@@ -29,6 +29,7 @@ def run():
         coordinates_a_b = data.find_a_b(table)
         coordinates_water = data.find_water(table)
         coordinates_dolars = data.find_dolars(table)
+        money = len(coordinates_dolars)
         coordinates_items = data.find_item(table)
         character = character_selection.character_selection()
         enter_pressed = False
@@ -44,6 +45,7 @@ def run():
             if inp == "i":
                 os.system("clear")
                 print(inv.print_table(inventory))
+                print("Your money:", money - len(coordinates_dolars), "/", money, "$")
                 print("\nPress ENTER to return")
                 quit_inventory = input()
             os.system("clear")
